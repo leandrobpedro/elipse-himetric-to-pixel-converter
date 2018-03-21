@@ -3,7 +3,7 @@
 O E3 utiliza o HIMETRIC para definir as coordenadas dos objetos de tela, e pixels para definir o tamanho dos 'frames' que serão utilizados para mostrar as telas. 1 Pixel equivale a aproximadamente 26,4 HIMETRIC. Este executável tem como objetivo facilitar esta conversão de himetric para pixel ou vice-versa conforme  [KB-25504](http://kb.elipse.com.br/en-us/questions/486/KB-25504%3A+Convertendo+HIMETRIC+para+PIXEL.).
 
 ## Introdução
-* Baixe o executável através do [link](https://goo.gl/9R3mvB).
+* Baixe o executável através do [link](https://app.box.com/v/himetric).
 * Coloque o arquivo no diretório em que preferir, e.g.: `c:\temp\himetric.exe`
 * Adicione o diretório à variável $PATH (opcional):
 ```batch
