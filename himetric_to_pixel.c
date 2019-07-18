@@ -17,6 +17,7 @@ void show_help ()
 {
   printf("\nUse: himetric [-h2p] [-p2h] value\n\n");
   printf("Options:\n\t-h2p\tHimetric to pixels.\n\t-p2h\tPixels to himetric.\n\n");
+  printf("Allows use of math expression as argument: 12+32-5+...\n");
 }
 
 /* Copy conversion result to clipboard. */
@@ -48,6 +49,26 @@ int main(int argc, char *argv[])
   } else {
     // Value to be converted.
     value = strtod(argv[2], &end);
+	
+    // Consumes the operation symbols
+    while (strlen(end) > 0){
+        if ((char) end[0] == '+'){
+            strcpy(&end[0], &end[1]);
+            value += strtod(end, &end);
+        }else if ((char) end[0] == '-'){
+            strcpy(&end[0], &end[1]);
+            value -= strtod(end, &end);
+        }else if ((char) end[0] == '*'){
+            strcpy(&end[0], &end[1]);
+            value *= strtod(end, &end);
+        }else if ((char) end[0] == '/'){
+            strcpy(&end[0], &end[1]);
+            value /= strtod(end, &end);
+        } else {
+		        show_help();
+		        return EXIT_FAILURE;	
+		}	
+    }	
 
     // Checks if value is a number.
     if (strcmp(end, "")) {
